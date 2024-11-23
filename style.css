@@ -16,7 +16,7 @@ header {
     margin: 20px auto;
     width: 900px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -44,12 +44,15 @@ nav a {
     color: #fff;
     padding: 10px;
     display: inline-block;
+    border-radius: 8px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
     background-color: #66ccff;
     color: #333;
 }
+
 
 main {
     max-width: 800px;
@@ -63,116 +66,93 @@ section {
     border: 1px solid #ddd;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-
-#habilidades ul,
-#experiencia ul,
-#proyectos ul,
-#contacto ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#experiencia ul li,
-#proyectos ul li {
-    margin-bottom: 10px;
-}
-
-#experiencia ul li strong {
-    font-weight: bold;
-}
-
-#proyectos ul li a,
-#contacto ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-#proyectos ul li a:hover,
-#contacto ul li a:hover {
-    text-decoration: underline;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 #habilidades ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #habilidades ul li {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
     animation: aparecer 1s ease-in-out;
 }
 
-#contacto {
-    padding: 30px 20px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    border-radius: 10px;
+#habilidades ul li:hover {
+    background-color: #003366;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#contacto h2 {
-    margin-bottom: 10px;
+#habilidades ul li i {
+    margin-right: 8px;
 }
 
-.contacto-lista {
+/* Imagen del perfil */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #003366;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Proyectos y contacto */
+#proyectos ul li a,
+#contacto ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#proyectos ul li a:hover,
+#contacto ul li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Contacto */
+#contacto ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
-.redes-sociales {
+.contacto-lista li {
     margin-bottom: 10px;
     text-align: center;
 }
 
-.redes-sociales a {
+.contacto-lista li a {
+    color: #003366;
     text-decoration: none;
-    color: #333;
-    margin: 0 10px;
-    font-size: 1.5em;
-    animation: aparecer 1s ease-in-out;
+    font-weight: bold;
 }
 
-.redes-sociales a:hover {
+.contacto-lista li a:hover {
     color: #000;
+    text-decoration: underline;
 }
 
-#contacto ul li {
-    margin-bottom: 10px;
-    text-align: center;
-    animation: aparecer 1s ease-in-out;
-}
-
-#contacto ul li i {
-    margin-right: 5px;
-}
-
-.menu-fijo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    transition: all 0.3s ease-in-out;
-}
-
-.menu-fijo.fijo {
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.animacion-titulo {
-    animation: aparecer 3s ease-in-out;
-}
-
+/* Animaciones */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -182,22 +162,11 @@ section {
     }
 }
 
-@media (max-width: 1024px) {
-    header {
-        width: 80%;
-        margin: 20px auto;
-    }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
     header {
         width: 90%;
         padding: 15px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
     }
 
     nav ul li {
@@ -205,28 +174,8 @@ section {
         margin: 5px 0;
     }
 
-    nav a {
-        padding: 8px;
-        margin: 5px 0;
-    }
-
     main {
         max-width: 90%;
-    }
-
-    section {
-        width: 100%;
-        max-width: 90%;
-        padding: 20px;
-    }
-
-    .redes-sociales a {
-        font-size: 1.2em;
-    }
-
-    .contacto-lista,
-    .redes-sociales {
-        text-align: center;
     }
 }
 
@@ -236,26 +185,7 @@ section {
         padding: 10px;
     }
 
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    nav a {
-        padding: 5px;
-        font-size: 0.9em;
-    }
-
     main {
         max-width: 95%;
-        padding: 10px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    .redes-sociales a {
-        font-size: 1em;
-        margin: 0 5px;
     }
 }
